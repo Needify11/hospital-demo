@@ -602,7 +602,7 @@ justify-content:center;
 
 }
 
-.statistics{
+#statistics{
 
 grid-template-columns:repeat(2,1fr);
 
@@ -635,8 +635,7 @@ display:block;
 font-size:48px;
 
 }
-
-.statistics{
+#statistics{
 
 grid-template-columns:1fr;
 
@@ -665,6 +664,10 @@ text-align:center;
 
     padding:120px 8%;
 
+}
+
+.about-container{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -691,7 +694,7 @@ text-align:center;
 
 }
 
-.experience.experience-badge{
+.experience-badge{
 
     position:absolute;
 
@@ -711,7 +714,7 @@ text-align:center;
 
 }
 
-.experience h2{
+.experience-badge h2{
 
     font-size:42px;
 
@@ -2003,73 +2006,81 @@ footer{
 
 }
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
+@media (max-width:992px){
 
-@media(max-width:1000px){
+.nav-links{
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    display:none;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+.nav-right{
+    display:none;
+}
+
+.menu{
+    display:block;
+}
+
+#hero,
+.about-container,
+.appointment-form{
+    grid-template-columns:1fr;
+}
+
+#statistics{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.department-grid,
+.doctor-grid,
+.facility-grid,
+.package-grid,
+.gallery-grid,
+.news-grid,
+.testimonial-slider{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.hero-left,
+.about-content{
+    text-align:center;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
 
 .contact-grid{
-
-grid-template-columns:1fr;
-
+    grid-template-columns:1fr;
 }
 
+.about-list{
+    grid-template-columns:1fr;
 }
 
-@media(max-width:768px){
-
-.section-heading h2{
-
-font-size:36px;
-
+.floating-card{
+    position:static;
+    display:inline-block;
+    margin:15px auto;
 }
 
-.testimonial-slider,
-.gallery-grid,
-.news-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-@media(max-width:768px){
-
-.section-heading h2{
-
-font-size:36px;
-
-}
-
-.testimonial-slider,
-.gallery-grid,
-.news-grid{
-
-grid-template-columns:1fr;
-
-}
-
-/* Appointment Form */
-
-.appointment-form{
-
-grid-template-columns:1fr;
-padding:30px;
-
-}
-
-.appointment-form textarea,
-.appointment-form button{
-
-grid-column:1;
-
-}
-
-.appointment-form button{
-
-width:100%;
-
+.experience-badge{
+    position:static;
+    display:inline-block;
+    margin-top:20px;
 }
 
 }
