@@ -2094,3 +2094,28 @@ footer{
     display:block !important;
 
 }
+@media (max-width:768px){
+
+#departments .section-heading,
+#facilities .section-heading{
+    display:block !important;
+}
+
+#departments .section-heading h2,
+#facilities .section-heading h2{
+    display:block !important;
+    color:#111827 !important;
+    font-size:32px !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+#departments .section-heading p,
+#facilities .section-heading p{
+    display:block !important;
+    color:#6B7280 !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+}
