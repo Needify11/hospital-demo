@@ -275,21 +275,14 @@ transform:translateY(-4px);
 }
 
 .emergency-btn{
-
-padding:12px 22px;
-
-background:#DC2626;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.3s;
-
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 28px;
+    min-width:220px;
+    border-radius:50px;
+    white-space:nowrap;
 }
 
 .appointment-btn{
