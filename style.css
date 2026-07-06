@@ -2084,3 +2084,13 @@ footer{
 }
 
 }
+.section-heading,
+.section-heading h2,
+.section-heading p{
+
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    display:block !important;
+
+}
