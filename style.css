@@ -279,12 +279,21 @@ transform:translateY(-4px);
     align-items:center;
     justify-content:center;
     gap:10px;
-    padding:16px 28px;
-    min-width:220px;
+    padding:18px 36px;
+    background:#EF4444;
+    color:#fff;
+    text-decoration:none;
     border-radius:50px;
-    white-space:nowrap;
+    font-weight:600;
+    font-size:18px;
+    margin-top:25px;
+    transition:.3s;
 }
 
+.emergency-btn:hover{
+    background:#DC2626;
+    color:#fff;
+}
 .appointment-btn{
 
 padding:13px 26px;
