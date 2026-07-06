@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initFAQ();
 
-    initReveal();
+    //initReveal();
 
     initSmoothScroll();
 
@@ -127,37 +127,48 @@ item.classList.toggle("active");
    REVEAL
 ========================================== */
 
-function initReveal(){
+function initReveal() {
 
-const elements=document.querySelectorAll("section");
+const elements = document.querySelectorAll("section");
 
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity=1;
-entry.target.style.transform="translateY(0)";
-
+if (!("IntersectionObserver" in window)) {
+    elements.forEach(section => {
+        section.style.opacity = "1";
+        section.style.transform = "none";
+    });
+    return;
 }
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+});
+
+elements.forEach(section => {
+
+    section.style.opacity = "1";
+    section.style.transform = "translateY(0)";
+    section.style.transition = "opacity .8s ease, transform .8s ease";
+
+    observer.observe(section);
 
 });
 
-},{threshold:.2});
-
-elements.forEach(section=>{
-
-section.style.opacity=0;
-section.style.transform="translateY(70px)";
-section.style.transition=".8s";
-
-observer.observe(section);
-
-});
-
 }
-
 /* ==========================================
    SMOOTH SCROLL
 ========================================== */
